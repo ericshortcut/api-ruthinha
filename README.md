@@ -12,7 +12,7 @@ Criar uma pasta ```mkdir api```
 Criar um arquivo  dentro da pasta api ```composer.json```
 
 Colocar o seguinte conteúdo dentro do arquivo ```composer.json```
-```
+```php
 {
     "require": {
         "slim/slim": "2.*"
@@ -31,7 +31,7 @@ Executar a máquina no c9 ```Run Project```
 Criar arquivo ```index.php``` dentro da pasta API e arquivo ```.htaccess``` na raiz do servidor
 
 index.php
-```
+```php
 <?php
 
 require 'vendor/autoload.php';
@@ -52,7 +52,7 @@ RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule . /api/index.php [L]
 ```
-
+# Terceiro passo
 Executando o primeiro teste na API
 
 Utilizamos o postman para facilitar o teste. Para baixar o postman clique no seguinte [link](https://chrome.google.com/webstore/detail/postman/fhbjgbiflinjbdggehcddcbncdddomop)
@@ -62,7 +62,7 @@ Fazer chamada na url ```/api/horarios``` com protocolo ```GET```, exemplo:
 https://api-rest-etec-ericshortcut.c9users.io/api/horarios
 ```
 Retorno
-```
+```json
 {
   "MANHA": "Manhã",
   "TARDE": "Tarde",
@@ -71,3 +71,22 @@ Retorno
 ```
 Print de tela da chamada com o postman
 ![Chamada de API de lista de horários](./img/lista-de-horarios.PNG)
+
+
+Executando o segundo teste na API
+
+Vamos fazer uma chamada para pesquisar na API qual os cursos em um determinado horário
+
+Fazer chamada na url ```/api/cursos/:HORARIO``` com protocolo ```GET```, exemplo:
+```
+https://api-rest-etec-ericshortcut.c9users.io/api/cursos/MANHA
+```
+Retorno
+```json
+{
+  "ENSINO_MEDIO": "Ensino médio",
+  "ENFERMAGEM": "Enfermagem"
+}
+```
+Print de tela da chamada com o postman
+![Chamada de API de lista de horários](./img/lista-de-cursos-no-horario-da-manha.PNG)
