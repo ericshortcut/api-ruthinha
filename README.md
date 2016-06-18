@@ -24,6 +24,31 @@ Execute o comando ```composer install``` dentro da pasta ```api```
 
 # Segundo passo
 
-Acessar a API do slim [API DO SLIM PHP](http://docs.slimframework.com/)
+Acessar a API do slim [LINK PARA API](http://docs.slimframework.com/)
 
 Executar a máquina no c9 ```Run Project```
+
+Criar arquivo ```index.php``` dentro da pasta API e arquivo ```.htaccess``` na raiz do servidor
+
+index.php
+```
+<?php
+
+require 'vendor/autoload.php';
+
+$app = new \Slim\Slim();
+$app->get('/hello/:name', function ($name) {
+    echo "Hello, " . $name;
+});
+$app->run();
+```
+
+.htaccess
+```
+RewriteEngine On
+RewriteBase /api/
+RewriteRule ^index\.php$ - [L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . /api/index.php [L]
+```
