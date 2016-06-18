@@ -1,4 +1,4 @@
-![Ruthinha - ETEC RUTH CARDOSO](./ruthinha.PNG)
+![Ruthinha - ETEC RUTH CARDOSO](./img/ruthinha.PNG)
 
 # Primeiro Passo
 
@@ -52,3 +52,22 @@ RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule . /api/index.php [L]
 ```
+
+Executando o primeiro teste na API
+
+Utilizamos o postman para facilitar o teste. Para baixar o postman clique no seguinte [link](https://chrome.google.com/webstore/detail/postman/fhbjgbiflinjbdggehcddcbncdddomop)
+
+Fazer chamada na url ```/api/horarios``` com protocolo ```GET```, exemplo:
+```
+https://api-rest-etec-ericshortcut.c9users.io/api/horarios
+```
+Retorno
+```
+{
+  "MANHA": "Manhã",
+  "TARDE": "Tarde",
+  "NOITE": "Noite"
+}
+```
+Print de tela da chamada com o postman
+![Chamada de API de lista de horários](./img/lista-de-horarios.PNG)
