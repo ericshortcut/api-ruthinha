@@ -21,3 +21,9 @@ Colocar o seguinte conteúdo dentro do arquivo ```composer.json```
 ```
 
 Execute o comando ```composer install``` dentro da pasta ```api```
+
+# Segundo passo
+
+Acessar a API do slim [API DO SLIM PHP](http://docs.slimframework.com/)
+
+Executar a máquina no c9 ```Run Project```
